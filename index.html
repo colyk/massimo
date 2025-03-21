@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Меню Massimo Czebureki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Підключення шрифту для елегантного оформлення -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Скидання стилів */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 2.8em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #555;
+    }
+    /* Секції меню */
+    .menu-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 10px;
+    }
+    .menu-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+      color: #222;
+    }
+    .menu-item {
+      display: flex;
+      background: #fff;
+      margin-bottom: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .menu-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .menu-item img {
+      width: 100%;
+      max-width: 200px;
+      height: 150px;
+      object-fit: cover;
+      /* Rounded corners on left side for larger screens */
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    .menu-item-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .menu-item-content h3 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .menu-item-content p {
+      font-size: 1em;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    .price {
+      font-weight: 700;
+      color: #d32f2f; /* Accent color */
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    /* Responsive адаптація */
+    @media (max-width: 600px) {
+      .menu-item {
+        flex-direction: column;
+      }
+      .menu-item img {
+        max-width: 100%;
+        height: 200px;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Massimo Czebureki</h1>
+    <p>Аутентична українська кухня у Варшаві</p>
+  </header>
+
+  <!-- Секція: Супи -->
+  <section class="menu-section" id="soups">
+    <h2>Супи</h2>
+    <div class="menu-item">
+      <img src="images/borshch.png" alt="Борщ">
+      <div class="menu-item-content">
+        <h3>Борщ</h3>
+        <p>Традиційний український борщ зі свіжими овочами, який подається гарячим або холодним зі сметаною.</p>
+        <p class="price">Ціна: 150 zł</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/rassolnik.png" alt="Розсольник">
+      <div class="menu-item-content">
+        <h3>Розсольник</h3>
+        <p>Насичений суп на основі розсолу з перловкою та м'ясом, ароматний та поживний.</p>
+        <p class="price">Ціна: 130 zł</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секція: Основні страви -->
+  <section class="menu-section" id="main-courses">
+    <h2>Основні страви</h2>
+    <div class="menu-item">
+      <img src="images/varenyky.png" alt="Вареники">
+      <div class="menu-item-content">
+        <h3>Вареники</h3>
+        <p>Традиційні вареники з начинкою з картоплі, сиру або м’яса, подаються зі сметаною та смаженими цибулею.</p>
+        <p class="price">Ціна: 120 zł</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/holubtsi.png" alt="Голубці">
+      <div class="menu-item-content">
+        <h3>Голубці</h3>
+        <p>Капустяні рулети, фаршировані рисом і м’ясом, тушковані в ароматному томатному соусі.</p>
+        <p class="price">Ціна: 130 zł</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Секція: Десерти -->
+  <section class="menu-section" id="desserts">
+    <h2>Десерти</h2>
+    <div class="menu-item">
+      <img src="images/ukrainian_dessert.png" alt="Український десерт">
+      <div class="menu-item-content">
+        <h3>Український десерт</h3>
+        <p>Ніжний солодкий десерт із сиром та ягодами, який поєднує традиції та сучасність.</p>
+        <p class="price">Ціна: 80 zł</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/napoleon.png" alt="Наполеон">
+      <div class="menu-item-content">
+        <h3>Наполеон</h3>
+        <p>Слоїстий торт з заварним кремом, просочений легким сиропом – класика для поціновувачів солодкого.</p>
+        <p class="price">Ціна: 90 zł</p>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="images/syrnyky.png" alt="Сирники">
+      <div class="menu-item-content">
+        <h3>Сирники</h3>
+        <p>Смажені сирні коржики, подаються зі сметаною та варенням – ідеальний вибір для сніданку чи десерту.</p>
+        <p class="price">Ціна: 100 zł</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

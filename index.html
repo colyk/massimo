@@ -4,24 +4,21 @@
   <meta charset="UTF-8">
   <title>Меню Massimo Czebureki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Підключення шрифту для елегантного оформлення -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth; /* Smooth scrolling */
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Montserrat', sans-serif;
       background: #fafafa;
       color: #333;
       line-height: 1.6;
-      padding-top: 60px; /* To prevent content from being hidden behind navbar */
+      padding-top: 60px;
     }
-
-    /* Navigation Bar */
     nav {
       position: fixed;
       top: 0;
@@ -29,9 +26,10 @@
       width: 100%;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(5px);
-      padding: 15px 0;
+      padding: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       z-index: 1000;
+      overflow-x: auto;
     }
     nav ul {
       display: flex;
@@ -40,7 +38,7 @@
       gap: 20px;
     }
     nav ul li {
-      display: inline;
+      text-wrap: nowrap;
     }
     nav ul li a {
       text-decoration: none;
@@ -55,9 +53,11 @@
       color: #fff;
     }
 
+    /* Header */
     header {
       text-align: center;
       margin-bottom: 40px;
+      margin-top: 20px;
     }
     header h1 {
       font-size: 2.8em;
@@ -72,56 +72,58 @@
 
     /* Menu Sections */
     .menu-section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
-      padding: 0 10px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      scroll-margin-top: 80px;
     }
     .menu-section h2 {
       font-size: 2em;
       margin-bottom: 20px;
-      border-bottom: 2px solid #e0e0e0;
+      border-bottom: 3px solid #d32f2f;
       padding-bottom: 5px;
-      color: #222;
+      color: #d32f2f;
     }
-    
-    /* Menu Items */
-    .menu-item {
+
+    /* Horizontal Scroll for Menu Items */
+    .menu-items-container {
       display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .menu-item {
+      flex: 0 0 auto;
+      width: 250px;
       background: #fff;
-      margin-bottom: 20px;
-      border: 1px solid #e0e0e0;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .menu-item:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     .menu-item img {
       width: 100%;
-      max-width: 200px;
       height: 150px;
       object-fit: cover;
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
     }
     .menu-item-content {
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 15px;
+      text-align: center;
     }
     .menu-item-content h3 {
-      font-size: 1.6em;
-      margin-bottom: 10px;
+      font-size: 1.4em;
+      margin-bottom: 5px;
       color: #222;
     }
     .menu-item-content p {
       font-size: 1em;
-      margin-bottom: 5px;
       color: #555;
     }
     .price {
@@ -131,107 +133,102 @@
       margin-top: 10px;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .menu-item {
-        flex-direction: column;
-      }
-      .menu-item img {
-        max-width: 100%;
-        height: 200px;
-        border-radius: 8px 8px 0 0;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 20px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#soups">Супи</a></li>
-            <li><a href="#main-courses">Основні страви</a></li>
-            <li><a href="#desserts">Десерти</a></li>
-        </ul>
-    </nav>
 
-  <header>
-    <h1>Massimo Czebureki</h1>
-    <p>Аутентична українська кухня у Варшаві</p>
-  </header>
+<nav>
+  <ul class="nav-links">
+    <li><a href="#soups">Супи</a></li>
+    <li><a href="#main-courses">Основні страви</a></li>
+    <li><a href="#desserts">Десерти</a></li>
+  </ul>
+</nav>
 
-  <!-- Секція: Супи -->
-  <section class="menu-section" id="soups">
-    <h2>Супи</h2>
+<header>
+  <h1>Massimo Czebureki</h1>
+  <p>Аутентична українська кухня у Варшаві</p>
+</header>
+
+<section class="menu-section" id="soups">
+  <h2>Супи</h2>
+  <div class="menu-items-container">
     <div class="menu-item">
       <img src="images/borshch.png" alt="Борщ">
       <div class="menu-item-content">
         <h3>Борщ</h3>
-        <p>Традиційний український борщ зі свіжими овочами, який подається гарячим або холодним зі сметаною.</p>
-        <p class="price">Ціна: 150 zł</p>
+        <p>Традиційний український борщ.</p>
+        <p class="price">150 zł</p>
       </div>
     </div>
     <div class="menu-item">
       <img src="images/rassolnik.png" alt="Розсольник">
       <div class="menu-item-content">
         <h3>Розсольник</h3>
-        <p>Насичений суп на основі розсолу з перловкою та м'ясом, ароматний та поживний.</p>
-        <p class="price">Ціна: 130 zł</p>
+        <p>Ароматний суп на основі розсолу.</p>
+        <p class="price">130 zł</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Секція: Основні страви -->
-  <section class="menu-section" id="main-courses">
-    <h2>Основні страви</h2>
+<section class="menu-section" id="main-courses">
+  <h2>Основні страви</h2>
+  <div class="menu-items-container">
     <div class="menu-item">
       <img src="images/varenyky.png" alt="Вареники">
       <div class="menu-item-content">
         <h3>Вареники</h3>
-        <p>Традиційні вареники з начинкою з картоплі, сиру або м’яса, подаються зі сметаною та смаженими цибулею.</p>
-        <p class="price">Ціна: 120 zł</p>
+        <p>З картоплею, сиром або м'ясом.</p>
+        <p class="price">120 zł</p>
       </div>
     </div>
     <div class="menu-item">
       <img src="images/holubtsi.png" alt="Голубці">
       <div class="menu-item-content">
         <h3>Голубці</h3>
-        <p>Капустяні рулети, фаршировані рисом і м’ясом, тушковані в ароматному томатному соусі.</p>
-        <p class="price">Ціна: 130 zł</p>
+        <p>Капустяні рулети з рисом та м’ясом.</p>
+        <p class="price">130 zł</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Секція: Десерти -->
-  <section class="menu-section" id="desserts">
-    <h2>Десерти</h2>
-    <div class="menu-item">
-      <img src="images/ukrainian_dessert.png" alt="Український десерт">
-      <div class="menu-item-content">
-        <h3>Український десерт</h3>
-        <p>Ніжний солодкий десерт із сиром та ягодами, який поєднує традиції та сучасність.</p>
-        <p class="price">Ціна: 80 zł</p>
-      </div>
-    </div>
+<section class="menu-section" id="desserts">
+  <h2>Десерти</h2>
+  <div class="menu-items-container">
     <div class="menu-item">
       <img src="images/napoleon.png" alt="Наполеон">
       <div class="menu-item-content">
         <h3>Наполеон</h3>
-        <p>Слоїстий торт з заварним кремом, просочений легким сиропом – класика для поціновувачів солодкого.</p>
-        <p class="price">Ціна: 90 zł</p>
+        <p>Слоїстий торт з заварним кремом.</p>
+        <p class="price">90 zł</p>
       </div>
     </div>
     <div class="menu-item">
       <img src="images/syrnyky.png" alt="Сирники">
       <div class="menu-item-content">
         <h3>Сирники</h3>
-        <p>Смажені сирні коржики, подаються зі сметаною та варенням – ідеальний вибір для сніданку чи десерту.</p>
-        <p class="price">Ціна: 100 zł</p>
+        <p>Смажені сирні коржики зі сметаною та варенням.</p>
+        <p class="price">100 zł</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<footer>
+  <p>📍 Адреса: Варшава, вул. Традиційна 12</p>
+  <p>📞 Телефон: +48 123 456 789</p>
+  <p>⏰ Години роботи: 10:00 - 22:00</p>
+</footer>
 
 </body>
 </html>
